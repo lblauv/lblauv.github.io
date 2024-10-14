@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke Blauvelt's Website</title>
     <style>
-        /* Simple blue and white design */
+        /* Body and basic styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Consolas', 'Courier New', monospace;
             background-color: white;
             color: black;
             margin: 0;
             padding: 0;
             text-align: center;
+            line-height: 1.6;
         }
 
-        /* Simple blue navbar */
+        /* Navbar styling */
         .navbar {
-            background-color: #0000FF;
+            background-color: #0033CC;
             padding: 10px;
             text-align: center;
         }
@@ -30,49 +31,98 @@
             font-size: 16px;
         }
 
-        /* Basic page content styling */
+        /* Focus and hover styles for better visibility */
+        .navbar a:focus, .navbar a:hover {
+            outline: 2px solid #FFD700; /* Gold focus outline */
+            background-color: #002699; /* Slightly darker background on focus/hover */
+        }
+
+        /* Main content styling */
         .main-content {
             padding: 20px;
         }
 
         h1 {
-            color: #0000FF;
+            color: #0033CC; /* Darker blue for better contrast */
+            font-size: 2em;
         }
 
         p {
-            font-size: 14px;
+            font-size: 1em;
         }
 
-        /* Simple blue links */
+        /* Accessible links */
         a {
-            color: blue;
+            color: #0033CC;
             text-decoration: underline;
+        }
+
+        a:focus, a:hover {
+            outline: 2px solid #FFD700;
+        }
+
+        /* Footer styling for the WCAG badge */
+        footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+            color: #002699; /* Darker blue for better contrast */
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #0033CC;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .badge:hover, .badge:focus {
+            background-color: #002699;
+            outline: 2px solid #FFD700;
+        }
+
+        /* Image styling */
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #0033CC;
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Navbar -->
-    <div class="navbar">
+    <!-- Navbar with accessible links -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
         <a href="projects.html">PROJECTS</a>
         <a href="media.html">MEDIA</a>
         <a href="resume.html">RESUME</a>
         <a href="contact.html">CONTACT</a>
-    </div>
+    </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="main-content">
         <h1>Welcome to Luke Blauvelt's Website</h1>
-        <p>
-            Hello and welcome! This is my personal website, where you can learn more about my work, projects, and hobbies.
-        </p>
-        <p>
-            Navigate through the menu to explore more about me and my passions. 
-            If you'd like to get in touch, visit the <a href="contact.html">Contact</a> page.
-        </p>
-    </div>
+        <p>Hello and welcome! This is my static website, where you can learn more about my work, projects, and hobbies.</p>
+        <p>Navigate through the menu to explore more about me and my passions. If you'd like to get in touch, visit the <a href="contact.html">Contact</a> page.</p>
+
+        <!-- Image below welcome message with alt text -->
+        <img src="./luke.jpeg" alt="Portrait of Luke Blauvelt">
+    </main>
+
+    <!-- Footer with WCAG accessibility badge -->
+    <footer>
+        <p>This website is WCAG 2.1 AA Compliant</p>
+        <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" class="badge" aria-label="Learn about WCAG 2.1 standards">WCAG Accessible</a>
+    </footer>
 
 </body>
 </html>
