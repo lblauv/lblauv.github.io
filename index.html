@@ -5,33 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke Blauvelt's Website</title>
     <style>
+        :root {
+            --background-color: white;
+            --text-color: black;
+            --link-color: blue;
+            --link-hover-focus-bg: #D3D3D3;
+        }
+
+        /* Dark mode variables */
+        .dark-mode {
+            --background-color: black;
+            --text-color: #00FF00;
+            --link-color: #00FF00;
+            --link-hover-focus-bg: #005500;
+        }
+
         body {
             font-family: 'Courier New', monospace;
-            background-color: black;
-            color: #00FF00; /* Bright green for retro terminal look */
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 20px;
+            padding: 0;
         }
 
         h1 {
             font-size: 24px;
-            color: #00FF00;
+            color: var(--text-color);
             text-align: left;
         }
 
         p, a {
             font-size: 16px;
-            color: #00FF00;
+            color: var(--link-color);
             text-decoration: none;
         }
 
         a:hover, a:focus {
-            background-color: #005500; /* Darker green on focus or hover */
+            background-color: var(--link-hover-focus-bg);
             outline: none;
         }
 
         hr {
             border: none;
-            border-top: 1px solid #00FF00;
+            border-top: 1px solid var(--text-color);
             margin: 20px 0;
         }
 
@@ -51,15 +67,34 @@
         }
 
         .footer a {
-            color: #00FF00;
+            color: var(--link-color);
         }
 
         .footer a:hover, .footer a:focus {
-            background-color: #005500;
+            background-color: var(--link-hover-focus-bg);
+        }
+
+        /* Toggle switch styling */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-label {
+            margin-left: 10px;
+            font-size: 14px;
+            color: var(--text-color);
         }
     </style>
 </head>
 <body>
+
+    <!-- Toggle Switch for Light/Dark Mode -->
+    <div class="toggle-container">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+        <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
+    </div>
 
     <h1>Luke Blauvelt's Website</h1>
 
@@ -85,6 +120,23 @@
         <p>This website is WCAG 2.1 AA Compliant</p>
         <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Learn more about WCAG accessibility</a></p>
     </div>
+
+    <script>
+        function toggleMode() {
+            // Check the status of the toggle (checkbox)
+            const toggle = document.getElementById('modeToggle');
+            const label = document.getElementById('toggleLabel');
+            
+            // Toggle dark mode based on checkbox state
+            if (toggle.checked) {
+                document.body.classList.add('dark-mode');
+                label.textContent = "Light Mode"; // Change label to "Light Mode"
+            } else {
+                document.body.classList.remove('dark-mode');
+                label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+            }
+        }
+    </script>
 
 </body>
 </html>
