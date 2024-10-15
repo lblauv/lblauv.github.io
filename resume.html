@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Blauvelt's Website</title>
+    <title>Luke Blauvelt's Resume</title>
     <style>
         :root {
             --background-color: white;
@@ -87,6 +87,22 @@
             color: var(--text-color);
             text-decoration: underline; /* Underline toggle label */
         }
+
+        /* Button styling for the view button */
+        .view-button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: var(--link-color);
+            color: var(--background-color);
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            text-decoration: underline;
+        }
+
+        .view-button:hover, .view-button:focus {
+            background-color: var(--link-hover-focus-bg);
+        }
     </style>
 </head>
 <body>
@@ -97,9 +113,15 @@
         <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
-    <h1>Luke Blauvelt's Website</h1>
+    <h1>Luke Blauvelt's Resume</h1>
 
-    <p>Hello, World! This is Luke Blauvelt's website.</p>
+    <p>You can download or view my resume by clicking the options below:</p>
+
+    <!-- Link to download the PDF file -->
+    <p><a href="LukeBlauveltResume2024.pdf" download>Download my Resume (PDF)</a></p>
+
+    <!-- Button to view the PDF file in browser -->
+    <p><a href="LukeBlauveltResume.pdf" target="_blank"><button class="view-button">View my Resume in Browser</button></a></p>
 
     <hr>
 
@@ -108,14 +130,10 @@
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
         <p><a href="projects.html">Projects</a></p>
-        <p><a href="media.html">Media</a></p>
-        <p><a href="resume.html">Resume</a></p>
         <p><a href="contact.html">Contact</a></p>
     </div>
 
     <hr>
-
-    <p>Navigate through this site using the links above. The design reflects the simplicity and minimalism of early web pages.</p>
 
     <div class="footer">
         <p>This website is WCAG 2.1 AA Compliant</p>
