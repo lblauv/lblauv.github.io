@@ -5,124 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke Blauvelt's Website</title>
     <style>
-        /* Body and basic styling */
         body {
-            font-family: 'Consolas', 'Courier New', monospace;
-            background-color: white;
-            color: black;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        /* Navbar styling */
-        .navbar {
-            background-color: #0033CC;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* Focus and hover styles for better visibility */
-        .navbar a:focus, .navbar a:hover {
-            outline: 2px solid #FFD700; /* Gold focus outline */
-            background-color: #002699; /* Slightly darker background on focus/hover */
-        }
-
-        /* Main content styling */
-        .main-content {
-            padding: 20px;
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: #00FF00; /* Bright green for retro terminal look */
+            margin: 20px;
         }
 
         h1 {
-            color: #0033CC; /* Darker blue for better contrast */
-            font-size: 2em;
+            font-size: 24px;
+            color: #00FF00;
+            text-align: left;
         }
 
-        p {
-            font-size: 1em;
-        }
-
-        /* Accessible links */
-        a {
-            color: #0033CC;
-            text-decoration: underline;
-        }
-
-        a:focus, a:hover {
-            outline: 2px solid #FFD700;
-        }
-
-        /* Footer styling for the WCAG badge */
-        footer {
-            background-color: #f0f0f0;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 12px;
-            color: #002699; /* Darker blue for better contrast */
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #0033CC;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
+        p, a {
+            font-size: 16px;
+            color: #00FF00;
             text-decoration: none;
         }
 
-        .badge:hover, .badge:focus {
-            background-color: #002699;
-            outline: 2px solid #FFD700;
+        a:hover, a:focus {
+            background-color: #005500; /* Darker green on focus or hover */
+            outline: none;
         }
 
-        /* Image styling */
-        img {
-            margin-top: 20px;
-            max-width: 300px;
-            height: auto;
-            border: 2px solid #0033CC;
+        hr {
+            border: none;
+            border-top: 1px solid #00FF00;
+            margin: 20px 0;
+        }
+
+        /* Simple navigation */
+        .navbar {
+            text-align: left;
+        }
+
+        .navbar p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        .footer a {
+            color: #00FF00;
+        }
+
+        .footer a:hover, .footer a:focus {
+            background-color: #005500;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar with accessible links -->
-    <nav class="navbar" aria-label="Main Navigation">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="media.html">MEDIA</a>
-        <a href="resume.html">RESUME</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
+    <h1>Luke Blauvelt's Website</h1>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1>Welcome to Luke Blauvelt's Website</h1>
-        <p>Hello, World! This is my static website, where you can learn more about my work, projects, and hobbies.</p>
-        <p>Navigate through the menu to explore more about me and my passions. If you'd like to get in touch, visit the <a href="contact.html">Contact</a> page.</p>
+    <p>This is Luke Blauvelt’s personal website, styled like the original World Wide Web project page.</p>
 
-        <!-- Image below welcome message with alt text -->
-        <img src="./luke.jpeg" alt="Portrait of Luke Blauvelt">
-    </main>
+    <hr>
 
-    <!-- Footer with WCAG accessibility badge -->
-    <footer>
+    <!-- Navigation Links -->
+    <div class="navbar">
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="projects.html">Projects</a></p>
+        <p><a href="media.html">Media</a></p>
+        <p><a href="resume.html">Resume</a></p>
+        <p><a href="contact.html">Contact</a></p>
+    </div>
+
+    <hr>
+
+    <p>Navigate through this site using the links above. The design reflects the simplicity and minimalism of early web pages.</p>
+
+    <div class="footer">
         <p>This website is WCAG 2.1 AA Compliant</p>
-        <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" class="badge" aria-label="Learn about WCAG 2.1 standards">WCAG Accessible</a>
-    </footer>
+        <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Learn more about WCAG accessibility</a></p>
+    </div>
 
 </body>
 </html>
