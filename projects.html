@@ -55,7 +55,9 @@
         .navbar {
             text-align: left;
         }
-
+        .navbar a.active {
+            font-weight: bold;
+        }
         .navbar p {
             margin: 5px 0;
         }
@@ -95,7 +97,7 @@
 
         .project img {
             max-width: 100%;
-            height: auto;
+            height: 250px;
             border: 2px solid var(--text-color);
             margin-top: 10px;
         }
@@ -126,7 +128,7 @@
     <div class="navbar">
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
-        <p><a href="projects.html">Projects</a></p>
+        <p><a href="projects.html" class="active">Projects</a></p>
         <p><a href="media.html">Media</a></p>
         <p><a href="resume.html">Resume</a></p>
         <p><a href="contact.html">Contact</a></p>
@@ -136,21 +138,21 @@
 
     <!-- Project 1 -->
     <div class="project">
-        <p class="project-title">Project 1: Website Example</p>
-        <p class="project-description">This is a brief description of the first project. It involves building a full-stack web application with various features. <a href="https://project1website.com" target="_blank">Visit Project 1</a>.</p>
+        <p class="project-title">Project 1: LüFT Controls</p>
+        <p class="project-description">LüFT is an innovative air control valve designed to optimize energy efficiency by providing precise airflow measurement using thermal dispersion technology. Currently in the prototyping phase, LüFT was developed in collaboration with manufacturers to ensure accuracy and reliability for critical applications like lab controls, VAV systems, and room pressurization. This project holds special significance to me as I assist my dad, the project's inventor, in developing the technical aspects of the solution. <a href="https://www.luftcontrols.co/" target="_blank">Visit LüFT Controls</a>.</p>
     </div>
 
     <!-- Project 2 -->
     <div class="project">
-        <p class="project-title">Project 2: Another Web App</p>
-        <p class="project-description">This project showcases a front-end design built with React. It has a variety of interactive elements and real-time data fetching. <a href="https://project2website.com" target="_blank">Visit Project 2</a>.</p>
+        <p class="project-title">Project 2: Swift Sign In (Terminated)</p>
+        <p class="project-description">This project aimed to streamline the process of using QR codes for seamless application sign-ins by developing a versatile client and server-side library that integrates with any authentication flow. Although I'm no longer actively working on it, this was an exciting full-stack prototyping experience that allowed me to dive deep into various authentication and authorization (AuthN/AuthZ) flows. <a href="https://swift-sign-in-01bc0e8b6c3839aea698d847e.webflow.io/" target="_blank">Visit Swift Sign In</a>.</p>
     </div>
 
     <!-- Project 3 (with image and description, no website yet) -->
     <div class="project">
-        <p class="project-title">Project 3: Design Concept</p>
-        <p class="project-description">This project is still in progress but involves the creation of a complex design system for user interfaces. Below is a concept image.</p>
-        <img src="images/project3-image.jpg" alt="Concept design of Project 3">
+        <p class="project-title">Project 3: DataGLU</p>
+        <p class="project-description">This project is still in progress but involves using AI to generate and deploy ETL scripts across different data ontologies.</p>
+        <img src="images/image.png" alt="Concept design of Project 3">
     </div>
 
     <hr>
