@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Blauvelt's Media Gallery</title>
+    <style>
+        :root {
+            --background-color: white;
+            --text-color: black;
+            --link-color: blue;
+            --link-hover-focus-bg: #D3D3D3;
+        }
+
+        /* Dark mode variables */
+        .dark-mode {
+            --background-color: black;
+            --text-color: #00FF00;
+            --link-color: #00FF00;
+            --link-hover-focus-bg: #005500;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 20px;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--text-color);
+            text-align: left;
+        }
+
+        /* Underline only clickable elements */
+        a, button, label[for="modeToggle"] {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+
+        a:hover, a:focus, button:hover, button:focus, label[for="modeToggle"]:hover, label[for="modeToggle"]:focus {
+            background-color: var(--link-hover-focus-bg);
+            outline: none;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--text-color);
+            margin: 20px 0;
+        }
+
+        /* Simple navigation */
+        .navbar {
+            text-align: left;
+        }
+
+        .navbar p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        .footer a {
+            color: var(--link-color);
+        }
+
+        .footer a:hover, .footer a:focus {
+            background-color: var(--link-hover-focus-bg);
+        }
+
+        /* Toggle switch styling */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-label {
+            margin-left: 10px;
+            font-size: 14px;
+            color: var(--text-color);
+            text-decoration: underline; /* Underline toggle label */
+        }
+
+        /* Gallery styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+        }
+
+        .gallery img:hover {
+            opacity: 0.8;
+        }
+
+        /* Full image view styling */
+        .full-img-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .full-img-container img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Toggle Switch for Light/Dark Mode -->
+    <div class="toggle-container">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+        <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
+    </div>
+
+
+    <h1>Luke Blauvelt's Media Gallery</h1>
+
+    <p>Welcome to the media gallery. Click on a photo to view it in full size.</p>
+    <hr>
+
+    <!-- Navigation Links -->
+    <div class="navbar">
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="projects.html">Projects</a></p>
+        <p><a href="resume.html">Resume</a></p>
+        <p><a href="contact.html">Contact</a></p>
+    </div>
+    
+    <hr>
+    <!-- Gallery Section -->
+<!-- Gallery Section -->
+    <div class="gallery">
+        <img src="images/BackCountrySkiingUtah.png" alt="Back Country Skiing Utah" onclick="openImage(this.src)">
+        <img src="images/BigSky.jpeg" alt="Big Sky" onclick="openImage(this.src)">
+        <img src="images/BigSky1.jpeg" alt="Big Sky 2" onclick="openImage(this.src)">
+        <img src="images/BigSky3.jpeg" alt="Big Sky 3" onclick="openImage(this.src)">
+        <img src="images/BigSky4.jpeg" alt="Big Sky 4" onclick="openImage(this.src)">
+        <img src="images/California1.jpeg" alt="California 1" onclick="openImage(this.src)">
+        <img src="images/California.jpeg" alt="California 2" onclick="openImage(this.src)">
+        <img src="images/Canoe.JPG" alt="Canoe" onclick="openImage(this.src)">
+        <img src="images/CatamaranFilm.jpeg" alt="Catamaran Film" onclick="openImage(this.src)">
+        <img src="images/Chicago.jpeg" alt="Chicago" onclick="openImage(this.src)">
+        <img src="images/DavidSailing.jpeg" alt="David Sailing" onclick="openImage(this.src)">
+        <img src="images/Duluth.jpeg" alt="Duluth" onclick="openImage(this.src)">
+        <img src="images/DustinProfile.jpeg" alt="Dustin Profile 1" onclick="openImage(this.src)">
+        <img src="images/DustinProfile2.jpeg" alt="Dustin Profile 2" onclick="openImage(this.src)">
+        <img src="images/DustinProfile3.jpeg" alt="Dustin Profile 3" onclick="openImage(this.src)">
+        <img src="images/DustinProfile4.jpeg" alt="Dustin Profile 4" onclick="openImage(this.src)">
+        <img src="images/FilmCatamaran.jpeg" alt="Film Catamaran" onclick="openImage(this.src)">
+        <img src="images/Frost.jpeg" alt="Frost" onclick="openImage(this.src)">
+        <img src="images/Georgia.jpeg" alt="Georgia" onclick="openImage(this.src)">
+        <img src="images/GeorgiaProfile.jpeg" alt="Georgia Profile" onclick="openImage(this.src)">
+        <img src="images/HaGiangLoop1.jpeg" alt="Ha Giang Loop 1" onclick="openImage(this.src)">
+        <img src="images/HaGiangLoop2.jpeg" alt="Ha Giang Loop 2" onclick="openImage(this.src)">
+        <img src="images/IceFormations.jpeg" alt="Ice Formations" onclick="openImage(this.src)">
+        <img src="images/IrishFort.jpeg" alt="Irish Fort" onclick="openImage(this.src)">
+        <img src="images/KiteboardFlip.jpeg" alt="Kiteboard Flip" onclick="openImage(this.src)">
+        <img src="images/KiteboardProfile1.jpeg" alt="Kiteboard Profile 1" onclick="openImage(this.src)">
+        <img src="images/KiteboardProfile2.jpeg" alt="Kiteboard Profile 2" onclick="openImage(this.src)">
+        <img src="images/KiteboardProfile3.jpeg" alt="Kiteboard Profile 3" onclick="openImage(this.src)">
+        <img src="images/KiteboardProfile4.jpeg" alt="Kiteboard Profile 4" onclick="openImage(this.src)">
+        <img src="images/NightSky1.jpeg" alt="Night Sky 1" onclick="openImage(this.src)">
+        <img src="images/NorthernLights.jpeg" alt="Northern Lights" onclick="openImage(this.src)">
+        <img src="images/Pine.jpeg" alt="Pine" onclick="openImage(this.src)">
+        <img src="images/PuertoRico.jpeg" alt="Puerto Rico" onclick="openImage(this.src)">
+        <img src="images/RiverDive.jpeg" alt="River Dive" onclick="openImage(this.src)">
+        <img src="images/SailingChicago.jpeg" alt="Sailing Chicago" onclick="openImage(this.src)">
+        <img src="images/SailingColgate26.jpeg" alt="Sailing Colgate 26" onclick="openImage(this.src)">
+        <img src="images/Ski.jpeg" alt="Ski" onclick="openImage(this.src)">
+        <img src="images/SmokeyMountain1.jpeg" alt="Smokey Mountain 1" onclick="openImage(this.src)">
+        <img src="images/SmokeyMountain.jpeg" alt="Smokey Mountain 2" onclick="openImage(this.src)">
+        <img src="images/StreetsOfHanoi.jpeg" alt="Streets of Hanoi" onclick="openImage(this.src)">
+        <img src="images/SunsetGrandHaven.jpeg" alt="Sunset Grand Haven" onclick="openImage(this.src)">
+        <img src="images/Surf.jpeg" alt="Surf" onclick="openImage(this.src)">
+        <img src="images/SwanDive.jpeg" alt="Swan Dive" onclick="openImage(this.src)">
+        <img src="images/VietnameseTemple.jpeg" alt="Vietnamese Temple" onclick="openImage(this.src)">
+        <img src="images/VietnamRiver1.jpeg" alt="Vietnam River 1" onclick="openImage(this.src)">
+        <img src="images/VietnamRiver.jpeg" alt="Vietnam River 2" onclick="openImage(this.src)">
+        <img src="images/VietnamValley1.jpeg" alt="Vietnam Valley 1" onclick="openImage(this.src)">
+        <img src="images/VietnamValley.jpeg" alt="Vietnam Valley 2" onclick="openImage(this.src)">
+        <img src="images/WalkingInMotion.jpeg" alt="Walking in Motion" onclick="openImage(this.src)">
+        <img src="images/DavidClimbing.jpeg" alt="David Climbing" onclick="openImage(this.src)">
+    </div>
+
+
+    <!-- Full Image View -->
+    <div class="full-img-container" id="fullImgContainer">
+        <span class="close-button" onclick="closeImage()">&times;</span>
+        <img id="fullImg" src="" alt="Full Image">
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <p>This website is WCAG 2.1 AA Compliant</p>
+        <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Learn more about WCAG accessibility</a></p>
+    </div>
+
+    <script>
+        function toggleMode() {
+            // Check the status of the toggle (checkbox)
+            const toggle = document.getElementById('modeToggle');
+            const label = document.getElementById('toggleLabel');
+            
+            // Toggle dark mode based on checkbox state
+            if (toggle.checked) {
+                document.body.classList.add('dark-mode');
+                label.textContent = "Light Mode"; // Change label to "Light Mode"
+            } else {
+                document.body.classList.remove('dark-mode');
+                label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+            }
+        }
+
+        // Function to open the full image view
+        function openImage(src) {
+            const fullImgContainer = document.getElementById('fullImgContainer');
+            const fullImg = document.getElementById('fullImg');
+            fullImg.src = src;
+            fullImgContainer.style.display = 'flex';
+        }
+
+        // Function to close the full image view
+        function closeImage() {
+            const fullImgContainer = document.getElementById('fullImgContainer');
+            fullImgContainer.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
