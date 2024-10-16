@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Blauvelt's Resume</title>
+    <title>Luke Blauvelt's Contact Page</title>
     <style>
         :root {
             --background-color: white;
@@ -88,21 +88,16 @@
             text-decoration: underline; /* Underline toggle label */
         }
 
-        /* Button styling for the view button */
-        .view-button {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: var(--link-color);
-            color: var(--background-color);
-            border: none;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            text-decoration: underline;
+        /* Contact info styling */
+        .contact-info {
+            font-size: 16px;
+            line-height: 1.6;
         }
 
-        .view-button:hover, .view-button:focus {
-            background-color: var(--link-hover-focus-bg);
+        .contact-info p {
+            margin: 10px 0;
         }
+
     </style>
 </head>
 <body>
@@ -113,8 +108,7 @@
         <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
-    <h1>Luke Blauvelt's Resume</h1>
-
+    <h1>Contact Luke Blauvelt</h1>
     <hr>
 
     <!-- Navigation Links -->
@@ -129,12 +123,14 @@
 
     <hr>
 
-    <p>You can download or view my resume by clicking the options below:</p>
+    <!-- Contact Info -->
+    <div class="contact-info">
+        <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p><strong>Email:</strong> <a href="mailto:lukeblauvelt@gmail.com">lukeblauvelt@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lukeblauvelt" target="_blank">linkedin.com/in/lukeblauvelt</a></p>
+    </div>
 
-    <p><a href="LukeBlauveltResume2024.pdf" download>Download my Resume (PDF)</a></p>
-
-    <!-- Button to view the same PDF file in browser -->
-    <p><a href="LukeBlauveltResume2024.pdf" target="_blank"><button class="view-button">View my Resume in Browser</button></a></p>
+    <hr>
 
     <div class="footer">
         <p>This website is WCAG 2.1 AA Compliant</p>
@@ -156,18 +152,19 @@
             }
         }
 
-        // Function to toggle light/dark mode and save preference in localStorage
         function toggleMode() {
+            // Check the status of the toggle (checkbox)
             const toggle = document.getElementById('modeToggle');
             const label = document.getElementById('toggleLabel');
-
+            
+            // Toggle dark mode based on checkbox state
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
-                label.textContent = "Light Mode";
+                label.textContent = "Light Mode"; // Change label to "Light Mode"
                 localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
-                label.textContent = "Dark Mode";
+                label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
                 localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }

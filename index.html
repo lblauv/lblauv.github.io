@@ -113,7 +113,7 @@
     <hr>
     <p>Hello, World! This is Luke Blauvelt's website.</p>
 
-    <hr
+    <hr>
 
     <p>Navigate through this site using the links above. The design reflects the simplicity and minimalism of early web pages.</p>
 
@@ -123,6 +123,20 @@
     </div>
 
     <script>
+        // On page load, check for a saved theme in localStorage
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            const toggle = document.getElementById('modeToggle');
+            const label = document.getElementById('toggleLabel');
+
+            // Apply the saved theme
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                toggle.checked = true;
+                label.textContent = "Light Mode";
+            }
+        }
+
         function toggleMode() {
             // Check the status of the toggle (checkbox)
             const toggle = document.getElementById('modeToggle');
@@ -132,9 +146,11 @@
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
                 label.textContent = "Light Mode"; // Change label to "Light Mode"
+                localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
                 label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+                localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }
     </script>

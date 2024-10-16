@@ -146,7 +146,6 @@
         <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
-
     <h1>Luke Blauvelt's Media Gallery</h1>
 
     <p>Welcome to the media gallery. Click on a photo to view it in full size.</p>
@@ -162,8 +161,8 @@
     </div>
     
     <hr>
+
     <!-- Gallery Section -->
-<!-- Gallery Section -->
     <div class="gallery">
         <img src="images/BackCountrySkiingUtah.png" alt="Back Country Skiing Utah" onclick="openImage(this.src)">
         <img src="images/BigSky.jpeg" alt="Big Sky" onclick="openImage(this.src)">
@@ -217,7 +216,6 @@
         <img src="images/DavidClimbing.jpeg" alt="David Climbing" onclick="openImage(this.src)">
     </div>
 
-
     <!-- Full Image View -->
     <div class="full-img-container" id="fullImgContainer">
         <span class="close-button" onclick="closeImage()">&times;</span>
@@ -232,6 +230,20 @@
     </div>
 
     <script>
+        // On page load, check for a saved theme in localStorage
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            const toggle = document.getElementById('modeToggle');
+            const label = document.getElementById('toggleLabel');
+
+            // Apply the saved theme
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                toggle.checked = true;
+                label.textContent = "Light Mode";
+            }
+        }
+
         function toggleMode() {
             // Check the status of the toggle (checkbox)
             const toggle = document.getElementById('modeToggle');
@@ -241,9 +253,11 @@
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
                 label.textContent = "Light Mode"; // Change label to "Light Mode"
+                localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
                 label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+                localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }
 
