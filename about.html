@@ -55,9 +55,11 @@
         .navbar {
             text-align: left;
         }
+
         .navbar a.active {
             font-weight: bold;
         }
+
         .navbar p {
             margin: 5px 0;
         }
@@ -95,7 +97,7 @@
 
     <!-- Toggle Switch for Light/Dark Mode -->
     <div class="toggle-container">
-        <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode()" aria-label="Toggle between light and dark mode">
         <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
@@ -104,14 +106,14 @@
     <hr>
 
     <!-- Navigation Links -->
-    <div class="navbar">
+    <nav class="navbar" role="navigation">
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html" class="active">About</a></p>
         <p><a href="projects.html">Projects</a></p>
         <p><a href="media.html">Media</a></p>
         <p><a href="resume.html">Resume</a></p>
         <p><a href="contact.html">Contact</a></p>
-    </div>
+    </nav>
 
     <hr>
 
