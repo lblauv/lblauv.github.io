@@ -93,12 +93,12 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
 
     <!-- Toggle Switch for Light/Dark Mode -->
     <div class="toggle-container">
-        <input type="checkbox" id="modeToggle" onchange="toggleMode()" aria-label="Toggle between light and dark mode">
-        <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
+        <input type="checkbox" id="modeToggle" onchange="toggleMode()" aria-label="Toggle between light and dark mode" checked>
+        <label class="toggle-label" id="toggleLabel" for="modeToggle">Light Mode</label>
     </div>
 
     <h1>About Luke Blauvelt</h1>
@@ -141,8 +141,11 @@
             const toggle = document.getElementById('modeToggle');
             const label = document.getElementById('toggleLabel');
 
-            // Apply the saved theme
-            if (savedTheme === 'dark') {
+            if (savedTheme === 'light') {
+                document.body.classList.remove('dark-mode');
+                toggle.checked = false;
+                label.textContent = "Dark Mode";
+            } else {
                 document.body.classList.add('dark-mode');
                 toggle.checked = true;
                 label.textContent = "Light Mode";
@@ -156,11 +159,11 @@
 
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
-                label.textContent = "Light Mode";
+                label.textContent = "Light Mode"; // Show target mode
                 localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
-                label.textContent = "Dark Mode";
+                label.textContent = "Dark Mode"; // Show target mode
                 localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }
