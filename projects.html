@@ -118,7 +118,7 @@
     <!-- Toggle Switch for Light/Dark Mode -->
     <div class="toggle-container">
         <input type="checkbox" id="modeToggle" onchange="toggleMode()" checked>
-        <label class="toggle-label" id="toggleLabel" for="modeToggle">Light Mode</label>
+        <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
     <h1>Luke Blauvelt's Projects</h1>
@@ -138,19 +138,23 @@
 
     <!-- Project 1 -->
     <div class="project">
-        <p class="project-title">Project 1: LüFT Controls</p>
+        <p class="project-title">Project 1: Project Sentinel (Active)</p>
+        <p class="project-description"> Project Sentinel is a fully <strong>agent-orchestrated, agent-driven</strong> climate intelligence platform delivering early warnings for ecosystem stress and climate hazards—starting with the Great Lakes and scaling nationwide. An autonomous agent mesh handles end-to-end workflows: ingesting satellite/IoT/public data, running geospatial models, scoring risk, and triggering response playbooks—with humans looped in only for escalations. I’m leading architecture and delivery (agent mesh, streaming ingest, geospatial pipelines, APIs, and interactive maps) and lining up pilot partners for modules like harmful algal blooms, shoreline flooding, wildfire smoke, and extreme heat.</p>
+    </div>
+    <div class="project">
+        <p class="project-title">Project 1: LüFT Controls (Archived)</p>
         <p class="project-description">LüFT is an innovative air control valve designed to optimize energy efficiency by providing precise airflow measurement using thermal dispersion technology. Currently in the prototyping phase, LüFT was developed in collaboration with manufacturers to ensure accuracy and reliability for critical applications like lab controls, VAV systems, and room pressurization. This project holds special significance to me as I assist my dad, the project's inventor, in developing the technical aspects of the solution. <a href="https://www.luftcontrols.co/" target="_blank">Visit LüFT Controls</a>.</p>
     </div>
 
     <!-- Project 2 -->
     <div class="project">
-        <p class="project-title">Project 2: Swift Sign In (Terminated)</p>
+        <p class="project-title">Project 2: Swift Sign In (Archived)</p>
         <p class="project-description">This project aimed to streamline the process of using QR codes for seamless application sign-ins by developing a versatile client and server-side library that integrates with any authentication flow. Although I'm no longer actively working on it, this was an exciting full-stack prototyping experience that allowed me to dive deep into various authentication and authorization (AuthN/AuthZ) flows. <a href="https://swift-sign-in-01bc0e8b6c3839aea698d847e.webflow.io/" target="_blank">Visit Swift Sign In</a>.</p>
     </div>
 
     <!-- Project 3 (with image and description, no website yet) -->
     <div class="project">
-        <p class="project-title">Project 3: DataGLU (Terminated)</p>
+        <p class="project-title">Project 3: DataGLU (Archived)</p>
         <p class="project-description">Successfully created an AI agent capable of generating an ETL script. The agent could accept OpenAPI documents, user instructions and credentials and generate a cron job and an integration function to run locally.</p>
         <img src="images/image.png" alt="Concept design of Project 3">
     </div>
@@ -176,7 +180,7 @@
             } else {
                 document.body.classList.add('dark-mode');
                 toggle.checked = true;
-                label.textContent = "Light Mode";
+                label.textContent = "Dark Mode";
             }
         }
 
@@ -188,11 +192,11 @@
             // Toggle dark mode based on checkbox state
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
-                label.textContent = "Light Mode"; // Change label to "Light Mode"
+                label.textContent = "Dark Mode";
                 localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
-                label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+                label.textContent = "Dark Mode";
                 localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }

@@ -97,7 +97,7 @@
     <!-- Toggle Switch for Light/Dark Mode -->
     <div class="toggle-container">
         <input type="checkbox" id="modeToggle" onchange="toggleMode()" checked>
-        <label class="toggle-label" id="toggleLabel" for="modeToggle">Light Mode</label>
+        <label class="toggle-label" id="toggleLabel" for="modeToggle">Dark Mode</label>
     </div>
 
     <h1>Luke Blauvelt's Website</h1>
@@ -138,7 +138,7 @@
             } else {
                 document.body.classList.add('dark-mode');
                 toggle.checked = true;
-                label.textContent = "Light Mode";
+                label.textContent = "Dark Mode";
             }
         }
 
@@ -150,11 +150,11 @@
             // Toggle dark mode based on checkbox state
             if (toggle.checked) {
                 document.body.classList.add('dark-mode');
-                label.textContent = "Light Mode"; // Change label to "Light Mode"
+                label.textContent = "Dark Mode";
                 localStorage.setItem('theme', 'dark'); // Save dark mode preference
             } else {
                 document.body.classList.remove('dark-mode');
-                label.textContent = "Dark Mode";  // Change label back to "Dark Mode"
+                label.textContent = "Dark Mode";
                 localStorage.setItem('theme', 'light'); // Save light mode preference
             }
         }
